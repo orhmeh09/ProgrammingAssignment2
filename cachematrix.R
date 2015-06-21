@@ -19,7 +19,8 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## cacheSolve: Get the inverse of the matrix x; if this is done more
 ## than once, return a precomputed version of the inverse
-## to speed things up.
+## to speed things up. Computing the inverse of a square matrix
+# can be done with the solve function in R. 
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
@@ -31,7 +32,8 @@ cacheSolve <- function(x, ...) {
   }
   
   data = x$get() # Get matrix data
-  inv = solve(data, ...) # and solve it
+
+  inv = solve(data, ...) # and solve it 
   x$setinverse(inv) # and save it 
   inv # and return it
 }
